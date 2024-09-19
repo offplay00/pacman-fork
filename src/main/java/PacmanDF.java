@@ -1,21 +1,23 @@
-import java.awt.Toolkit;
-import java.awt.Font;
-import java.awt.Point;
-import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Dimension;
-import java.awt.Image;
-import javax.swing.JPanel;
-import javax.swing.JFrame;
-import javax.swing.Timer;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import PacmanDFClass.PacMap;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
 import PacmanDFClass.PacEnemy;
+import PacmanDFClass.PacMap;
 import PacmanDFClass.PacRecord;
 
 public class PacmanDF extends JPanel {
@@ -198,7 +200,7 @@ public class PacmanDF extends JPanel {
 				}
 
 				if (flagMovement[0]) {
-					if (pacmanCoords.x < 600 && map.isWall(pacmanCoords.x + 30, pacmanCoords.y)) {
+					if (pacmanCoords.x < 600 && !map.isWall(pacmanCoords.x + 30, pacmanCoords.y)) {
 						if (flagDirection[2]) {
 							if (pacmanCoords.x % 30 == 0) {
 								flagMovement[2] = true;
