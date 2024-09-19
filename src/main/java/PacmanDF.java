@@ -134,7 +134,7 @@ public class PacmanDF extends JPanel {
 					enemy4.moveEnemy(pacmanCoords, map);
 
 				if (map.isEat(pacmanCoords.x, pacmanCoords.y)) {
-					currentScore--;
+					currentScore++;
 					currentBall++;
 					if (currentBall == 192) {
 						currentBall = 0;
