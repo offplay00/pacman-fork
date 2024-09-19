@@ -1,12 +1,15 @@
 package PacmanDFClass;
 
-import java.io.RandomAccessFile;
-import java.io.File;
-import java.io.IOException;
-import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
 import javax.swing.JOptionPane;
+
+import PacmanDFClass.Record;
 
 public class PacRecord {
 	private Record[] record = new Record[10];
@@ -117,7 +120,7 @@ public class PacRecord {
 
 		if (file.exists()) {
 			for (int i = 0; i < 10; i++) {
-				if (score < record[i].score) {
+				if (score > record[i].score) {
 					String name = JOptionPane.showInputDialog(null,
 							"Complimenti, nuovo record!\nInserisci il tuo nome:", "Nuovo record",
 							JOptionPane.PLAIN_MESSAGE);
